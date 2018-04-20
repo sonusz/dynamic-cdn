@@ -170,9 +170,10 @@ def read_IPs_from_file(file):
 
 
 class ZoneFile():
+    # This class is used to update A records in zone file 'file_path'
     def __init__(self, domain, file_path):
-        self.domain = domain
-        self.file_path = file_path
+        self.domain = domain  # e.g. 'ddm.lan'
+        self.file_path = file_path  # e.g. '/etc/named/zones/db.ddm.lan'
         self.my_IP = self.my_ip_address()
         self.zone_template = """$TTL    1200
 @   IN  SOA ns.{}.    admin.{}. (
